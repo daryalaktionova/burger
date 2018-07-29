@@ -1,0 +1,30 @@
+.features {
+
+}
+.features__list {
+    display: flex;
+}
+
+.features__item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 6px;
+}
+
+.features__img-wrapper {
+    margin: 0 auto;   
+    margin-bottom: 34px;
+}
+
+.features__desc {
+    text-align: center;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.features__title {
+    font-family: Lifehack;
+    font-size: 24px;
+}

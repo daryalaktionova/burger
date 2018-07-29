@@ -1,0 +1,25 @@
+.main {
+    background-image: url('../../images/section-main/img-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+.main-content {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+    padding-bottom: 20%;
+}
+.main__desc {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 12%;
+}
+
+.main__button-down {
+    margin-bottom: 38px;
+}

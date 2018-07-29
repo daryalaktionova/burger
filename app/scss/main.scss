@@ -1,3 +1,16 @@
-@import "fonts";
+//setup
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'layout';
 
-@import "blocks/header";
+//blocks
+@import 'blocks/section';
+@import 'blocks/main';
+@import 'blocks/header';
+@import 'blocks/paginator';
+@import 'blocks/order-link';
+@import 'blocks/best';
+@import 'blocks/features';
+@import 'blocks/reviews';
+
