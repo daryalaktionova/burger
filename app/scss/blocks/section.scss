@@ -6,9 +6,14 @@
 .section__title {
     font-family: Gagalin;
     font-size: 72px;
+    text-align: center;
     &--color-yellow {
         color: $yellow;
     }
+}
+
+.section__title--text-align-left {
+    text-align: left;
 }
 
 .section__text {
