@@ -53,8 +53,7 @@
 }
 
 .reviews__title {
-    font-family: Gagalin;
-    font-weight: 400;
+    @include gagalin;
     margin-bottom: 32px;
 }
 
@@ -62,12 +61,13 @@
     font-size: 14px;
     line-height: 1.75;
     margin-bottom: 24px;
+    @include ubuntu(light);
 }
 
 .reviews__button {
+    @include ubuntu(500);
     display: inline-block;
     font-size: 13px;
-    font-weight: 500;
     text-transform: uppercase;
     padding: 12px;
     background-color: #2f3234;

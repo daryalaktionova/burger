@@ -20,10 +20,26 @@
     padding-top: 12%;
 }
 
+.main__wrapper-down {
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    flex: 0.2;
+}
+
 .main__button-down {
-    margin-bottom: 38px;
+    height: min-content;
+    display: flex;
+    align-self: center;
 }
 
 .main__img-wrapper {
     max-height: 80%;
+    max-width: 60%;
+}
+
+.main__img {
+    object-fit: cover;
 }
