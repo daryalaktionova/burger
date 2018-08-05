@@ -12,6 +12,9 @@
     flex: 1;
     text-align: right;
     margin-right: 3%;
+    @include tablets {
+		display: none;
+	}
 }
 
 .top-bar__item {

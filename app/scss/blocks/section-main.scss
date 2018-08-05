@@ -5,6 +5,14 @@
     -webkit-background-size: cover;
     background-size: cover;
     position: relative;
+    .section__title {
+		@include phones {
+			font-size: rem(63px);
+		}
+		@include phones-small {
+			font-size: rem(50px);
+		}
+	}
 }
 .main-content {
     display: flex;
@@ -13,11 +21,31 @@
     width: 100%;
     max-height: 80%;
     flex: 1;
+    @include tablets {
+		flex-direction: column;
+		padding-bottom: 0;
+	}
 }
 .main__desc {
     display: flex;
     flex-wrap: wrap;
     padding-top: 12%;
+    @include tablets {
+		padding-top: rem(20px);
+		padding-bottom: rem(100px);
+        width: 75%;
+        text-align: center;
+	}
+	@include phones {
+        width: 100%;
+	}
+}
+.main__desc {
+    .section__title {
+        @include tablets {
+            margin: 0 auto;
+        }
+    }
 }
 
 .main__wrapper-down {
