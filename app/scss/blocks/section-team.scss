@@ -1,0 +1,90 @@
+.team {
+    background-image: url('../../app/images/section-team/bg-team.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team__content {
+    position: absolute;
+    background-color: rgba(47,50,52,0.93);
+    left: 50%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: left;
+    padding: 112px 92px;
+}
+.accordeon {
+    margin-top: 45px;
+}
+
+.accordeon__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    @include gagalin;
+    display: inline-block;
+    margin-bottom: 14px;
+}
+
+.accordeon__item--is-active .accordeon__link {
+    color: $yellow; 
+}
+
+.accordeon__link:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-top-color: $yellow;
+    border-bottom-width: 0;
+    margin-right: 8px;
+}
+
+.accordeon-content {
+    color: $white;
+    font-size: 14px;
+    display: none;
+}
+
+.accordeon__item--is-active .accordeon-content {
+    display: block;
+}
+
+.accordeon-desc-title {
+    @include ubuntu(bold);
+    margin-bottom: 20px;
+}
+
+.accordeon-desc-text {
+    @include ubuntu(light);
+}
+
+.accordeon__image {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 42px;
+    flex-basis: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.accordeon-desc {
+    display: inline-block;
+    width: 50%;
+    margin: 0 auto;
+    padding: 16px;
+}

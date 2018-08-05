@@ -10,6 +10,16 @@
     &--color-yellow {
         color: $yellow;
     }
+    &--color-white {
+        color:$white;
+    }
+    &--color-dark {
+        margin-bottom: 58px;
+    }
+    &--padding-top-left {
+        padding-top: 10%;
+        padding-left: 10%;
+    }
 }
 
 .section__title--text-align-left {
@@ -25,6 +35,4 @@
     }
 }
 
-.section__title--color-dark {
-    margin-bottom: 58px;
-}
+

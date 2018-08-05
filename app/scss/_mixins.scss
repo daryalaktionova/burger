@@ -1,16 +1,21 @@
 @mixin gagalin() {
     font-family: 'Gagalin-Regular', Helvetica, sans-serif;
+    font-weight: 300;
 }
 
 @mixin ubuntu($style: light) {
     font-family: 'Ubuntu', Helvetica, sans-serif;
     @if $style==light {
-        font-weight: 300;
+        font-weight: 300; 
     }
-    @if $style==medium {
+    @else if $style==regular {
+        font-weight: 400; 
+    }
+    @else if $style==medium {
         font-weight: 500;
+
     }
-    @if $style==bold {
+    @else if $style==bold {
         font-weight: bold;
     }
 }
