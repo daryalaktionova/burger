@@ -1,0 +1,56 @@
+.map {
+    background-image: url(../../images/section-map/mar-img.png);
+    background-size: cover;
+    background-repeat: none;
+    height: 95%;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:$dark;
+    background-image: url(../../images/section-map/map-bg.jpg);
+    background-size: cover;
+    text-align: left;
+    flex: 0 0 auto;
+    color: $white;
+}
+
+.footer__left {
+    padding: 20px 0;
+    width: 50%;
+}
+.contacts__address {
+    @include ubuntu(light);
+    font-size: 14px;
+}
+.contacts__phone {
+    @include ubuntu(bold);
+    color: $red;
+    margin-top: 6px;
+}
+
+.footer__right {
+    width: 50%;
+}
+
+.social-footer__list {
+    display: flex;
+    justify-content: flex-end;
+}
+.social-footer__item {
+    margin-right: 18px;
+}
+.social-footer__item:last-child {
+    margin-right: 0;
+}
+
+.social-footer__icon {
+    fill: #5e5e5e;
+    max-width: 22px;
+    max-height: 22px;
+    transition: 0.2s;
+}
+.social-footer__icon:hover {
+    fill: $white;
+}

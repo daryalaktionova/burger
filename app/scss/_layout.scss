@@ -43,3 +43,7 @@ ul {
 	align-items: center;
 	height: 100%;
 }
+.container--footer {
+	flex-direction: row;
+	justify-content: space-between;
+}
