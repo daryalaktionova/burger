@@ -19,6 +19,11 @@
 .footer__left {
     padding: rem(20px) 0;
     width: 50%;
+    @include phones {
+		width: 100%;
+		text-align: center;
+		margin-bottom: rem(15px);
+	}
 }
 .contacts__address {
     @include ubuntu(light);
@@ -32,11 +37,19 @@
 
 .footer__right {
     width: 50%;
+    @include phones {
+		width: 100%;
+		text-align: center;
+		margin-bottom: rem(15px);
+	}
 }
 
 .social-footer__list {
     display: flex;
     justify-content: flex-end;
+    @include phones {
+        justify-content: center;
+    }
 }
 .social-footer__item {
     margin-right: rem(18px);
@@ -54,3 +67,4 @@
 .social-footer__icon:hover {
     fill: $white;
 }
+

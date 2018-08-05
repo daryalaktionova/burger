@@ -34,6 +34,10 @@
 		&:after {
 			background-color: rgba(20, 20, 20, .7);
 		}
+    }
+    @include tablets {
+		height: 25%;
+		width: 50%;
 	}
 }
 
@@ -50,11 +54,25 @@
     &:hover {
         opacity: 1;
     }
+    @include tablets {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 0 5%;
+		text-align: center;
+	}
 }
 
 .reviews__title {
     @include gagalin;
     margin-bottom: rem(32px);
+    @include tablets {
+		margin-bottom: rem(10px);
+	}
+	@include phones {
+		font-size: rem(24px);
+	}
 }
 
 .reviews__text {
@@ -62,6 +80,13 @@
     line-height: 1.75;
     margin-bottom: rem(24px);
     @include ubuntu(light);
+    @include tablets {
+		font-size: rem(13px);
+		margin-bottom: rem(10px);
+	}
+	@include phones {
+		display: none;
+	}
 }
 
 .reviews__button {

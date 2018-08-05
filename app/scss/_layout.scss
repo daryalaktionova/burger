@@ -46,4 +46,7 @@ ul {
 .container--footer {
 	flex-direction: row;
 	justify-content: space-between;
+	@include phones {
+		flex-direction: column;
+	}
 }

@@ -8,6 +8,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include tablets {
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(47, 50, 52, .93);
+		}
+	}
 }
 
 .team__content {
@@ -19,18 +31,29 @@
     bottom: 0;
     text-align: left;
     padding: rem(112px) rem(92px);
+    @include tablets {
+		left: 0;
+		padding: 0;
+		position: relative;
+		text-align: center;
+		background-color: transparent;
+	}
 }
 .accordeon {
     margin-top: rem(45px);
 }
 
 .accordeon__link {
-    color: #fff;
+    color:$white;
     text-decoration: none;
     font-size: rem(14px);
     @include gagalin;
     display: inline-block;
     margin-bottom: rem(14px);
+    @include tablets {
+		font-size: rem(24px);
+	}
+
 }
 
 .accordeon__item--is-active .accordeon__link {
@@ -53,6 +76,10 @@
     color: $white;
     font-size: 14px;
     display: none;
+	@include tablets {
+        width: 75%;
+        margin: 0 auto;
+	}
 }
 
 .accordeon__item--is-active .accordeon-content {
@@ -80,6 +107,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    @include tablets {
+        display: block;
+        margin: 0 auto;
+	}
 }
 
 .accordeon-desc {
@@ -87,4 +118,16 @@
     width: 50%;
     margin: 0 auto;
     padding: rem(16px);
+    @include tablets {
+        width: 80%;
+	}
+}
+
+.accordeon__item {
+    @include tablets {
+		margin-bottom: rem(20px);
+	}
+	@include phones {
+		margin-bottom: rem(10px);
+	}
 }

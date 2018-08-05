@@ -6,6 +6,11 @@
 .form__row {
     display: flex;
     margin-bottom: rem(15px);
+    &--submit {
+        @include phones {
+            justify-content: center;
+        }
+    }
 }
 
 .form-section {
@@ -16,6 +21,19 @@
     text-align: center;
     display: flex;
     align-items: center;
+    .section__title {
+		margin-bottom: rem(45px);
+		@include tablets {
+			margin-bottom: rem(20px);
+		}
+		@include phones {
+			line-height: 50px;
+		}
+		@include phones-small {
+			font-size: rem(32px);
+			margin-bottom: rem(4px);
+		}
+	}
 }
 
 .form__layout {
@@ -23,10 +41,25 @@
     width: 100%;
     color: $white;
     justify-content: space-between;
+    @include tablets {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	@include phones-small {
+		font-size: rem(13px);
+	}
 }
 .form__column {
     width: 50%;
     margin-left: rem(20px);
+    @include tablets {
+        width: 75%;
+        margin-left: 0;
+	}
+	@include phones {
+		width: 95%;
+	}
 }
 .form__column:first-child {
     margin-left: 0;
@@ -46,9 +79,16 @@
 
 .form__field:first-child {
     margin-left: 0;
+    @include phones {
+        margin-left: auto;
+    }
 }
 .form__field--checkbox {
     display: flex;
+    @include phones{
+        width: auto;
+        margin: 0 auto;
+    }
 }
 
 .form__input {
@@ -69,6 +109,9 @@
 .form__radio {
     display: flex;
     justify-content: flex-start;
+    @include phones {
+        justify-content: center;
+    }
 }
 .form__label--radio {
     width: auto;

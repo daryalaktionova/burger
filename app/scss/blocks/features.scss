@@ -1,5 +1,12 @@
 .features__list {
     display: flex;
+    @include phones {
+		flex-direction: column;
+		padding-bottom: 7%;
+	}
+	@include phones-small {
+		padding-bottom: 3%;
+	}
 }
 
 .features__item {
@@ -7,6 +14,12 @@
     flex-direction: column;
     flex: 1;
     padding: 0 rem(6px);
+    @include phones {
+		flex-direction: row;
+		justify-content: space-between;
+		text-align: left;
+		margin-bottom: rem(10px);
+	}
 }
 
 .features__img-wrapper {
@@ -21,6 +34,10 @@
     font-size: rem(14px);
     line-height: 1.7;
     color: $dark;
+    @include phones {
+        width: 70%;
+        text-align: left;
+	}
 }
 .features__img {
     max-width: 130px;
@@ -43,4 +60,7 @@
     font-weight: 300;
     font-size: rem(24px);
     line-height: 1.2;
+    @include phones-small {
+		margin-bottom: rem(5px);
+	}
 }
