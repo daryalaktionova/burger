@@ -42,7 +42,7 @@
     height: 100%;
     opacity: 0;
     transition: 0.3s;
-    padding: 49px 21px 0;
+    padding: rem(49px) rem(21px) 0;
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -54,24 +54,24 @@
 
 .reviews__title {
     @include gagalin;
-    margin-bottom: 32px;
+    margin-bottom: rem(32px);
 }
 
 .reviews__text {
     font-size: 14px;
     line-height: 1.75;
-    margin-bottom: 24px;
+    margin-bottom: rem(24px);
     @include ubuntu(light);
 }
 
 .reviews__button {
     @include ubuntu(500);
     display: inline-block;
-    font-size: 13px;
+    font-size: rem(13px);
     text-transform: uppercase;
-    padding: 12px;
+    padding: rem(12px);
     background-color: #2f3234;
-    border-radius: 5px;
+    border-radius: rem(5px);
     cursor: pointer;
     text-decoration: none;
     color: #fff;

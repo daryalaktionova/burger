@@ -1,15 +1,15 @@
 .order-link {
     color: $white;
     background-color: $red;
-    padding: 6px 10px;
-    border-radius: 3px;
+    padding: rem(6px) rem(10px);
+    border-radius: rem(3px);
     text-transform: uppercase;
     font-weight: 500;
     text-decoration: none;
     transition: 0.3s;
     display: inline-block;
-    font-size: 13px;
-    border: 1px solid transparent;
+    font-size: rem(13px);
+    border: rem(1px) solid transparent;
     outline: none;
     &:hover {
         background-color: #c1401e;
@@ -17,5 +17,5 @@
 }
 
 .order-link--submit {
-    margin-right: 25px;
+    margin-right: rem(25px);
 }

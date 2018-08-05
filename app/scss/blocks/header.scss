@@ -5,7 +5,7 @@
     align-items: center;
 }
 .logo {
-    padding-top: 12px;
+    padding-top: rem(12px);
 }
 
 .top-bar {
@@ -19,14 +19,14 @@
     vertical-align: middle;
     &:after {
         content: '';
-        width: 4px;
-        height: 4px;
+        width: rem(4px);
+        height: rem(4px);
         background: $white;
         display: inline-block;
         vertical-align: middle;
         border-radius: 50%;
-        margin: 0 14px 6px 14px;
-        border-bottom: 1px solid transparent;
+        margin: 0 rem(14px) rem(6px) rem(14px);
+        border-bottom: rem(1px) solid transparent;
     }
     &:last-child:after {
         display: none;
@@ -34,16 +34,16 @@
 }
 .top-bar__link {
     color: $white;
-    font-size: 13px;
+    font-size: rem(13px);
     text-transform: uppercase;
     font-weight: 500;
     text-decoration: none;
     transition: 0.3s;
-    border-bottom: 1px solid transparent;
+    border-bottom: rem(1px) solid transparent;
     display: inline-block;
     vertical-align: middle;
     line-height: 1.42;
     &:hover {
-        border-bottom: 1px solid $white;
+        border-bottom: rem(1px) solid $white;
     }
 }

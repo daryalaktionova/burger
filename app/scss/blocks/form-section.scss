@@ -1,11 +1,11 @@
 .form {
     color: $white;
     @include ubuntu(light);
-    font-size: 14px;
+    font-size: rem(14px);
 }
 .form__row {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: rem(15px);
 }
 
 .form-section {
@@ -26,7 +26,7 @@
 }
 .form__column {
     width: 50%;
-    margin-left: 20px;
+    margin-left: rem(20px);
 }
 .form__column:first-child {
     margin-left: 0;
@@ -35,13 +35,13 @@
 .form__label {
     width: 100%;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: rem(8px);
 }
 
 .form__field {
     width: 100%;
     text-align: left;
-    margin-left: 20px;
+    margin-left: rem(20px);
 }
 
 .form__field:first-child {
@@ -54,11 +54,11 @@
 .form__input {
     outline: none;
     width: 100%;
-    border: 2px #d1cfcb solid;
+    border: rem(2px) #d1cfcb solid;
     color: $dark;
-    line-height: 33px;
-    border-radius: 5px;
-    padding: 1px 20px;
+    line-height: rem(33px);
+    border-radius: rem(5px);
+    padding: rem(1px) rem(20px);
     font-weight: 300;
 }
 
@@ -72,15 +72,15 @@
 }
 .form__label--radio {
     width: auto;
-    margin-right: 16px;
+    margin-right: rem(16px);
     display: flex;
 }
 
 .form__radio-item {
   background-color:$white;
   content: '';
-  height: 15px;
-  width: 15px;
+  height: rem(15px);
+  width: rem(15px);
   display: flex;
     justify-content: center;
     align-items: center;
@@ -91,8 +91,8 @@
 .form__radio-item:after {
     background-color:$input-radio;
     content: '';
-    height: 7px;
-    width: 7px;
+    height: rem(7px);
+    width: rem(7px);
     display: block;
     border-radius: 50%;
     position: absolute;
@@ -104,10 +104,10 @@
 }
 
 .form__checkbox-item {
-    width: 16px;
-    height: 15px;
+    width: rem(16px);
+    height: rem(15px);
     background-color: $white;
-    margin-right: 6px;
+    margin-right: rem(6px);
     position: relative;
     display: flex;
     justify-content: center;
@@ -117,8 +117,8 @@
 .form__checkbox:checked+.form__checkbox-item:after {
     content: '';
     background: url(../../images/section-form/check.png) no-repeat;
-    width: 15px;
-    height: 15px;
+    width: rem(15px);
+    height: rem(15px);
     position: absolute;
 }
 
