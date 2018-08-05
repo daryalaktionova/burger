@@ -33,6 +33,7 @@
     height: min-content;
     display: flex;
     align-self: center;
+    max-width: 40px;
 }
 
 .main__img-wrapper {
@@ -42,4 +43,8 @@
 
 .main__img {
     object-fit: cover;
+}
+
+.main__button-down-icon {
+    fill: $white;
 }

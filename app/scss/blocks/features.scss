@@ -22,6 +22,21 @@
     line-height: 1.7;
     color: $dark;
 }
+.features__img {
+    max-width: 130px;
+    max-height: 100px;
+}
+.features__img--meat {
+    fill: $red;
+}
+
+.features__img--hand {
+    fill: $yellow;
+}
+
+.features__img--natural {
+    fill: $green;
+}
 
 .features__title {
     @include lifehack;
