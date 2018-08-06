@@ -2,4 +2,12 @@
     background-image: url('../../app/images/section-best/section-two-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    @include phones {
+        height: auto;
+    }
+    .section__title--color-dark {
+        @include phones {
+            margin-bottom: 0.625rem;
+        }
+    }
 }

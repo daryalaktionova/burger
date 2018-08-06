@@ -24,6 +24,21 @@
     font-family: 'Lifehack-Medium';
 }
 
+@function rem($px) {
+	@return $px / 16px*1rem;
+}
+
+@mixin desktop {
+	@media screen and (max-width: $desktop) {
+		@content
+	}
+}
+
+@mixin laptop {
+	@media screen and (max-width: $laptop) {
+		@content
+	}
+}
 
 @mixin tablets {
 	@media screen and (max-width: $tablets) {
@@ -41,8 +56,4 @@
 	@media screen and (max-width: $phones-small) {
 		@content
 	}
-}
-
-@function rem($px) {
-	@return $px / 16px+0rem;
 }
