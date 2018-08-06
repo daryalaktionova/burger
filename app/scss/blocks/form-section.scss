@@ -159,7 +159,7 @@
 
 .form__checkbox:checked+.form__checkbox-item:after {
     content: '';
-    background: url(../../images/section-form/check.png) no-repeat;
+    background: url(../images/section-form/check.png) no-repeat;
     width: rem(15px);
     height: rem(15px);
     position: absolute;
