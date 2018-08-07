@@ -37,10 +37,17 @@
     overflow: hidden;
     display: inline-flex;
     display: none;
+    @include tablets {
+        width: auto;
+        flex: 1;
+    }
 }
 
 .accordeon-menu__item--is-active .accordeon-menu__item-content {
     display: block;
+}
+.accordeon-menu__item--is-active  .accordeon-menu__link {
+    color: $link-menu-active;
 }
 
 .accordeon-menu__item-text {
@@ -59,6 +66,11 @@
     writing-mode: vertical-lr;
     margin: rem(15px);
     margin-bottom: rem(25px);
+    @include tablets {
+        margin: 0;
+        margin-bottom: rem(25px);
+        font-size: rem(30px);
+    }
 }
 
 

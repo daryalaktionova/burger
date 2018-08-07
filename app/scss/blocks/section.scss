@@ -15,6 +15,9 @@
     }
     &--color-dark {
         margin-bottom: rem(58px);
+        @include phones {
+            font-size: rem(50px);
+        }
     }
     &--padding-top-left {
         padding-top: 10%;
@@ -22,11 +25,19 @@
     }
     @include phones {
 		font-size: rem(50px);
-	}
+    }
+    &--phones-small {
+        @include phones-small {
+            font-size: rem(34px);
+        }
+    }
 }
 
 .section__title--text-align-left {
     text-align: left;
+    @include tablets {
+        text-align: center;
+    }
 }
 
 .section__text {
