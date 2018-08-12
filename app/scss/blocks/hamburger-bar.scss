@@ -11,6 +11,9 @@
 		top: rem(36px);
 		right: rem(30px);
 	}
+	@include phones {
+		right: rem(60px);
+	}
 }
 
 .hamburger-bar__element {
