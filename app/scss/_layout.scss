@@ -16,7 +16,7 @@ html, body {
 body {
 	line-height: 1.42;
 	font-size: 16px;
-	font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+	@include ubuntu(500);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -42,4 +42,11 @@ ul {
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+}
+.container--footer {
+	flex-direction: row;
+	justify-content: space-between;
+	@include phones {
+		flex-direction: column;
+	}
 }

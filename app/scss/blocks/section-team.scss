@@ -1,0 +1,138 @@
+.team {
+    background-image: url('../../app/images/section-team/bg-team.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include tablets {
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(47, 50, 52, .93);
+		}
+    }
+    .section__title {
+        @include phones {
+            text-align: center;
+        }
+    }
+}
+
+.team__content {
+    position: absolute;
+    background-color: rgba(47,50,52,0.93);
+    left: 50%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: left;
+    padding: rem(112px) rem(92px);
+    @include tablets {
+		left: 0;
+		padding: 0;
+		position: relative;
+		text-align: center;
+		background-color: transparent;
+	}
+}
+.accordeon {
+    margin-top: rem(45px);
+}
+
+.accordeon__link {
+    color:$white;
+    text-decoration: none;
+    font-size: rem(14px);
+    @include gagalin;
+    display: inline-block;
+    margin-bottom: rem(14px);
+    @include tablets {
+		font-size: rem(24px);
+	}
+
+}
+
+.accordeon__item--is-active .accordeon__link {
+    color: $yellow; 
+}
+
+.accordeon__link:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-top-color: $yellow;
+    border-bottom-width: 0;
+    margin-right: rem(8px);
+}
+
+.accordeon-content {
+    color: $white;
+    font-size: 14px;
+    display: none;
+	@include tablets {
+        width: 75%;
+        margin: 0 auto;
+	}
+}
+
+.accordeon__item--is-active .accordeon-content {
+    display: block;
+}
+
+.accordeon-desc-title {
+    @include ubuntu(bold);
+    margin-bottom: rem(20px);
+}
+
+.accordeon-desc-text {
+    @include ubuntu(light);
+}
+
+.accordeon__image {
+    height: rem(100px);
+    width: rem(100px);
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: rem(42px);
+    flex-basis: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include tablets {
+        display: block;
+        margin: 0 auto;
+	}
+}
+
+.accordeon-desc {
+    display: inline-block;
+    width: 50%;
+    margin: 0 auto;
+    padding: rem(16px);
+    @include tablets {
+        width: 80%;
+	}
+}
+
+.accordeon__item {
+    @include tablets {
+		margin-bottom: rem(20px);
+	}
+	@include phones {
+		margin-bottom: rem(10px);
+	}
+}

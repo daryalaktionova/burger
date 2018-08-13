@@ -34,6 +34,10 @@
 		&:after {
 			background-color: rgba(20, 20, 20, .7);
 		}
+    }
+    @include tablets {
+		height: 25%;
+		width: 50%;
 	}
 }
 
@@ -42,7 +46,7 @@
     height: 100%;
     opacity: 0;
     transition: 0.3s;
-    padding: 49px 21px 0;
+    padding: rem(49px) rem(21px) 0;
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -50,28 +54,49 @@
     &:hover {
         opacity: 1;
     }
+    @include tablets {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 0 5%;
+		text-align: center;
+	}
 }
 
 .reviews__title {
-    font-family: Gagalin;
-    font-weight: 400;
-    margin-bottom: 32px;
+    @include gagalin;
+    margin-bottom: rem(32px);
+    @include tablets {
+		margin-bottom: rem(10px);
+	}
+	@include phones {
+		font-size: rem(24px);
+	}
 }
 
 .reviews__text {
     font-size: 14px;
     line-height: 1.75;
-    margin-bottom: 24px;
+    margin-bottom: rem(24px);
+    @include ubuntu(light);
+    @include tablets {
+		font-size: rem(13px);
+		margin-bottom: rem(10px);
+	}
+	@include phones {
+		display: none;
+	}
 }
 
 .reviews__button {
+    @include ubuntu(500);
     display: inline-block;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: rem(13px);
     text-transform: uppercase;
-    padding: 12px;
+    padding: rem(12px);
     background-color: #2f3234;
-    border-radius: 5px;
+    border-radius: rem(5px);
     cursor: pointer;
     text-decoration: none;
     color: #fff;

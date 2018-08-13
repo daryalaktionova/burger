@@ -2,9 +2,16 @@
     background-image: url('../../app/images/section-main/img-bg.jpg');
     background-repeat: no-repeat;
     background-position: 50%;
-    -webkit-background-size: cover;
     background-size: cover;
     position: relative;
+    .section__title {
+		@include phones {
+			font-size: rem(63px);
+		}
+		@include phones-small {
+			font-size: rem(50px);
+		}
+	}
 }
 .main-content {
     display: flex;
@@ -13,17 +20,73 @@
     width: 100%;
     max-height: 80%;
     flex: 1;
+    @include tablets {
+		flex-direction: column;
+		padding-bottom: 0;
+	}
 }
 .main__desc {
     display: flex;
     flex-wrap: wrap;
     padding-top: 12%;
+    @include tablets {
+		padding-top: rem(20px);
+		padding-bottom: rem(100px);
+        width: 75%;
+        text-align: center;
+	}
+	@include phones {
+        width: 100%;
+	}
+}
+.main__desc {
+    .section__title {
+        @include tablets {
+            margin: 0 auto;
+        }
+    }
+}
+
+.main__wrapper-down {
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    flex: 0.2;
 }
 
 .main__button-down {
-    margin-bottom: 38px;
+    height: min-content;
+    display: flex;
+    align-self: center;
+    max-width: rem(40px);
 }
 
 .main__img-wrapper {
-    max-height: 80%;
+    max-height: 100%;
+    max-width: 100%;
+    @include tablets {
+		width: 100%;
+		height: 65%;
+		text-align: center;
+	}
+	@include phones {
+		height: 50%;
+	}
+}
+
+.main__img {
+    object-fit: cover;
+    display: inline-block;
+    position: relative;
+    @include tablets {
+		max-width: 100%;
+		max-height: 100%;
+		text-align: center;
+	}
+}
+
+.main__button-down-icon {
+    fill: $white;
 }

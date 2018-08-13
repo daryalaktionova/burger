@@ -4,27 +4,55 @@
 }
 
 .section__title {
-    font-family: Gagalin;
-    font-size: 72px;
+    @include gagalin;
+    font-size: rem(72px);
     text-align: center;
     &--color-yellow {
         color: $yellow;
+    }
+    &--color-white {
+        color:$white;
+    }
+    &--color-dark {
+        margin-bottom: rem(58px);
+        @include phones {
+            font-size: rem(50px);
+        }
+    }
+    &--padding-top-left {
+        padding-top: 10%;
+        padding-left: 10%;
+    }
+    @include phones {
+		font-size: rem(50px);
+    }
+    &--phones-small {
+        @include phones-small {
+            font-size: rem(34px);
+        }
     }
 }
 
 .section__title--text-align-left {
     text-align: left;
+    @include tablets {
+        text-align: center;
+    }
 }
 
 .section__text {
     font-size: 4rem;
-    font-family: Lifehack;
+    @include lifehack;
     line-height: 1;
     &--white {
         color: $white;
     }
+    @include phones {
+		font-size: rem(54px);
+	}
+	@include phones-small {
+		font-size: rem(44px);
+	}
 }
 
-.section__title--color-dark {
-    margin-bottom: 58px;
-}
+

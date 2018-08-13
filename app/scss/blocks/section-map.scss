@@ -1,0 +1,70 @@
+.map {
+    background-image: url(../images/section-map/mar-img.png);
+    background-size: cover;
+    background-repeat: none;
+    height: 95%;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:$dark;
+    background-image: url(../images/section-map/map-bg.jpg);
+    background-size: cover;
+    text-align: left;
+    flex: 0 0 auto;
+    color: $white;
+}
+
+.footer__left {
+    padding: rem(20px) 0;
+    width: 50%;
+    @include phones {
+		width: 100%;
+		text-align: center;
+		margin-bottom: rem(15px);
+	}
+}
+.contacts__address {
+    @include ubuntu(light);
+    font-size: 14px;
+}
+.contacts__phone {
+    @include ubuntu(bold);
+    color: $red;
+    margin-top: rem(6px);
+}
+
+.footer__right {
+    width: 50%;
+    @include phones {
+		width: 100%;
+		text-align: center;
+		margin-bottom: rem(15px);
+	}
+}
+
+.social-footer__list {
+    display: flex;
+    justify-content: flex-end;
+    @include phones {
+        justify-content: center;
+    }
+}
+.social-footer__item {
+    margin-right: rem(18px);
+}
+.social-footer__item:last-child {
+    margin-right: 0;
+}
+
+.social-footer__icon {
+    fill: #5e5e5e;
+    max-width: rem(22px);
+    max-height: rem(22px);
+    transition: 0.2s;
+}
+.social-footer__icon:hover {
+    fill: $white;
+}
+

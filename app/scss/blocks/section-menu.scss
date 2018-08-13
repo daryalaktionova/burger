@@ -1,0 +1,86 @@
+.menu {
+    background-image: url(../images/section-menu/bg-menu.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    text-align: left;
+    display: flex;
+    align-items: flex-start; 
+}
+
+.accordeon-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.accordeon-menu__list {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.accordeon-menu__item {
+    height: 100%;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-repeat: none;
+    @include phones-small {
+        display: none;
+    }
+}
+.accordeon-menu__item-content {
+    height: 100%;
+    background: rgba(47,50,52,.93);
+    width: rem(540px);
+    overflow: hidden;
+    display: inline-flex;
+    display: none;
+    @include tablets {
+        width: auto;
+        flex: 1;
+    }
+}
+
+.accordeon-menu__item--is-active {
+    @include phones-small {
+        display: flex;
+    }
+}
+
+.accordeon-menu__item--is-active .accordeon-menu__item-content {
+    display: block;
+}
+.accordeon-menu__item--is-active  .accordeon-menu__link {
+    color: $link-menu-active;
+}
+
+.accordeon-menu__item-text {
+    padding: rem(50px) rem(30px);
+    @include ubuntu(light);
+    font-size: rem(14px);
+}
+
+.accordeon-menu__link {
+    @include gagalin;
+    font-size: rem(40px);
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+    margin: rem(15px);
+    margin-bottom: rem(25px);
+    @include tablets {
+        margin: 0;
+        margin-bottom: rem(25px);
+        font-size: rem(30px);
+    }
+}
+
+
+

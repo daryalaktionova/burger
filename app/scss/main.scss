@@ -1,7 +1,7 @@
 //setup
 @import 'fonts';
-@import 'variables';
 @import 'mixins';
+@import 'variables';
 @import 'layout';
 
 //blocks
@@ -13,4 +13,8 @@
 @import 'blocks/best';
 @import 'blocks/features';
 @import 'blocks/reviews';
-
+@import 'blocks/section-team';
+@import 'blocks/section-menu';
+@import 'blocks/form-section';
+@import 'blocks/section-map';
+@import 'blocks/hamburger-bar.scss';

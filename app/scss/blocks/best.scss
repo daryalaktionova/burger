@@ -1,5 +1,17 @@
 .best {
-    background-image: url('../../app/images/section-best/section-two-bg.jpg');
+    background-image: url('../images/section-best/section-two-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    @include tablets {
+        background-image: url('../images/section-best/section-two-bg_ipad.jpg');
+    }
+    @include phones {
+        background-image: url('../images/section-best/section-two-bg_iphone.jpg');
+        height: 100vh;
+    }
+    .section__title--color-dark {
+        @include phones {
+            margin-bottom: 0.625rem;
+        }
+    }
 }
