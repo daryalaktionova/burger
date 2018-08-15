@@ -64,7 +64,9 @@
 
 .burger__arrows-picture{
     fill: $white;
-    width: rem(27px);
+	width: rem(27px);
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .burger__arrows-item--right {
@@ -77,6 +79,8 @@
 	}
 	@include tablets {
 		right: rem(-16px);
+		width: rem(27px);
+		height:rem(27px);
 	}
 }
 
@@ -90,6 +94,8 @@
 	}
 	@include tablets {
 		left: rem(-16px);
+		width: rem(27px);
+		height:rem(27px);
 	}
 }
 
@@ -254,7 +260,7 @@
     left: 0;
     background-color: $white;
     opacity: 0.9;
-    display: none;
+	left: 100%;
 	border-radius: rem(5px);
 	transition: 0.2s;
 	padding: rem(20px);
@@ -264,7 +270,11 @@
 		padding-right: rem(40px);
 	}
 	@include phones {
-		width: auto;
+		width: 15rem;
+		padding: rem(10px);
+	}
+	@include phones-small {
+		width: 11rem;
 	}
 }
 
@@ -287,16 +297,44 @@
 	max-width: rem(45px);
 	max-height: rem(45px);
 	margin-right: rem(20px);
+	@include phones-small {
+		margin-right: rem(10px);
+		min-width: 3rem;
+	}
 }
 
 .dropdown__list {
 	width: 100%;
+	@include tablets {
+		width: 80%;
+	}
 }
 
 .dropdown__text {
 	flex: 1;
 	font-weight: 500;
 	margin-right: rem(10px);
+	@include phones-small {
+		margin-right: rem(8px);
+	}
+}
+
+.dropdown__close {
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	@include tablets {
+		right: 7%;
+	}
+	@include phones-small {
+		right: 2%;
+    	top: 1%;
+	}
+}
+
+.dropdown__close-image {
+	max-width: 100%;
+	max-height: 100%;
 }
 
 
