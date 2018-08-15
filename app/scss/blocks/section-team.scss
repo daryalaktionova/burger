@@ -79,8 +79,9 @@
 
 .accordeon-content {
     color: $white;
+    max-height: 0;
     font-size: 14px;
-    display: none;
+    overflow: hidden;
 	@include tablets {
         width: 75%;
         margin: 0 auto;
@@ -88,7 +89,7 @@
 }
 
 .accordeon__item--is-active .accordeon-content {
-    display: block;
+    max-height: 100%;
 }
 
 .accordeon-desc-title {
