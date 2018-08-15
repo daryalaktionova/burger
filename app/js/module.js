@@ -70,3 +70,37 @@ let teamAccordeon = (function(options) {
 
 
 /*end Accordeon team */
+
+
+/*Accordeon menu */
+let menuAccordeon = (function(options) {
+
+    let linkAccordeonMenu = document.querySelectorAll(options.link);
+
+    let _toggleAccordeonMenu = function(e) {
+      e.preventDefault();
+      this.parentNode.classList.toggle('accordeon-menu__item--is-active');
+    }
+
+    let addListenersAccordeonMenu = function() {
+       for (i=0;i<linkAccordeonMenu.length;i++){
+          linkAccordeonMenu[i].addEventListener('click', _toggleAccordeonMenu);
+        }
+    }
+
+
+
+    
+    return {
+        openItemAccordeonMenu: addListenersAccordeonMenu
+      };
+
+  })({
+    link: '.accordeon-menu__link'
+  });
+
+  menuAccordeon.openItemAccordeonMenu();
+
+
+
+/*Accordeon menu end */
