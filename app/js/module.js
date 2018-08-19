@@ -44,14 +44,13 @@ let teamAccordeon = (function() {
 
     let linkAccordeon = document.querySelectorAll('.accordeon__link');
     
-
     let forEachAccordeon = linkAccordeon.forEach(function(personName) {
     personName.addEventListener('click', function(e) {
           e.preventDefault();
           let activePerson = document.querySelector('.accordeon__item.accordeon__item--is-active');
           if(activePerson) {
             let teamAccordeonDetails = activePerson.querySelector('.accordeon-content');
-            teamAccordeonDetails.style.height = "0px";
+            teamAccordeonDetails.style.height = "";
             activePerson.classList.remove('accordeon__item--is-active');
           }
 
@@ -62,18 +61,47 @@ let teamAccordeon = (function() {
             currentPersonInfo.style.height = currentPersonInfo.scrollHeight + 'px';
           }
         })
-
-
     })
-
-
   })
 
 teamAccordeon();
-
-
-
 /*end Accordeon team */
+
+/* Start accordeon horizontal */
+let menuAccordeon = (function() {
+
+    let linkMenuAccordeon = document.querySelectorAll('.accordeon-menu__link');
+    let userWidth = window.innerWidth;
+    let list = document.querySelector('.accordeon-menu__list');
+    let itemsList = list.querySelectorAll('.accordeon-menu__item');
+		let titleItem = list.querySelector('.accordeon-menu__link');
+		let widthTitle = titleItem.clientWidth;
+		var neededWidth = userWidth - itemsList.length * widthTitle;
+		neededWidth = (neededWidth > 520) ? '520px' : neededWidth + 'px';
+    
+    let forEachMenuAccordeon = linkMenuAccordeon.forEach(function(categoryName) {
+    categoryName.addEventListener('click', function(e) {
+          e.preventDefault();
+          let activeCategory = document.querySelector('.accordeon-menu__item.accordeon-menu__item--is-active');
+          if(activeCategory) {
+            let menuAccordeonDetails = activeCategory.querySelector('.accordeon-menu__item-content');
+            menuAccordeonDetails.style.width = "";
+            activeCategory.classList.remove('accordeon-menu__item--is-active');
+          }
+
+          if(!activeCategory|| activeCategory.linkMenuAccordeon !== this) {
+            let currentCategory = this.closest('.accordeon-menu__item');
+            currentCategory.classList.add('accordeon-menu__item--is-active');
+            let currentCategoryInfo = currentCategory.querySelector('.accordeon-menu__item-content');
+            currentCategoryInfo.style.width = neededWidth;
+          }
+        })
+    })
+  })
+
+menuAccordeon();
+
+/*End accordeon horinzontal */
 
 
 
