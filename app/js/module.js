@@ -40,70 +40,42 @@
 /*end overlay menu */
 
 /*Accodeon team*/
-let teamAccordeon = (function(options) {
+let teamAccordeon = (function() {
 
-    let linkAccordeon = document.querySelectorAll(options.link);
-
-    let _toggleAccordeon = function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('accordeon__item--is-active');
-    }
-
-    let addListenersAccordeon = function() {
-       for (i=0;i<linkAccordeon.length;i++){
-          linkAccordeon[i].addEventListener('click', _toggleAccordeon);
-        }
-    }
-
-
-
+    let linkAccordeon = document.querySelectorAll('.accordeon__link');
     
-    return {
-        openItemAccordeon: addListenersAccordeon
-      };
 
-  })({
-    link: '.accordeon__link'
-  });
+    let forEachAccordeon = linkAccordeon.forEach(function(personName) {
+    personName.addEventListener('click', function(e) {
+          e.preventDefault();
+          let activePerson = document.querySelector('.accordeon__item.accordeon__item--is-active');
+          if(activePerson) {
+            let teamAccordeonDetails = activePerson.querySelector('.accordeon-content');
+            teamAccordeonDetails.style.height = "0px";
+            activePerson.classList.remove('accordeon__item--is-active');
+          }
 
-  teamAccordeon.openItemAccordeon();
+          if(!activePerson || activePerson.linkAccordeon !== this) {
+            let currentPerson = this.closest('.accordeon__item');
+            currentPerson.classList.add('accordeon__item--is-active');
+            let currentPersonInfo = currentPerson.querySelector('.accordeon-content');
+            currentPersonInfo.style.height = currentPersonInfo.scrollHeight + 'px';
+          }
+        })
+
+
+    })
+
+
+  })
+
+teamAccordeon();
+
 
 
 /*end Accordeon team */
 
 
-/*Accordeon menu */
-let menuAccordeon = (function(options) {
-
-    let linkAccordeonMenu = document.querySelectorAll(options.link);
-
-    let _toggleAccordeonMenu = function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('accordeon-menu__item--is-active');
-    }
-
-    let addListenersAccordeonMenu = function() {
-       for (i=0;i<linkAccordeonMenu.length;i++){
-          linkAccordeonMenu[i].addEventListener('click', _toggleAccordeonMenu);
-        }
-    }
-
-
-
-    
-    return {
-        openItemAccordeonMenu: addListenersAccordeonMenu
-      };
-
-  })({
-    link: '.accordeon-menu__link'
-  });
-
-  menuAccordeon.openItemAccordeonMenu();
-
-
-
-/*Accordeon menu end */
 
 /* popup */
 let popup = (function(options) {
