@@ -191,3 +191,80 @@ popup({
 	title: ".reviews__title",
 	text: ".reviews__text"
 }).init();
+
+
+/* end popup */
+
+/* form*/
+const myForm = document.querySelector('#myForm');
+const send = document.querySelector('#send');
+
+
+send.addEventListener('click', event => {
+  event.preventDefault();
+
+  const data = {
+    name: myForm.elements.name.value,
+    phone: myForm.elements.phone.value,
+    comment: myForm.elements.comment.value,
+    to: "segezmundovna@gmail.com"
+  };
+
+  const xhr = new XMLHttpRequest();
+  xhr.responseType='json';
+  xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+  xhr.send(JSON.stringify(data));
+  xhr.addEventListener('load', () => {
+    if(xhr.response.status) {
+      console.log(xhr.response.status);
+    }
+  });
+
+});
+
+/*end form */
+
+/* start burger__composition */
+let isMobile = () => {
+  let screen = document.documentElement.clientWidth;
+	let mobile = false;
+	if(screen<=768){
+    mobile = true;
+  } 
+	return mobile;
+};
+
+let mobileComposition = () => {
+		let buttonComposition = document.querySelector('.burger__composition');
+		let buttonCloseComposition = document.querySelector('.dropdown__close');
+
+		buttonCloseComposition.addEventListener('click', e => {
+			e.preventDefault();
+
+			buttonComposition.classList.remove('active');
+		});
+		buttonCloseComposition.addEventListener('touchstart', e => {
+			e.preventDefault();
+
+			buttonComposition.classList.remove('active');
+		});
+
+		if (isMobile) {
+			buttonComposition.addEventListener('click', e => {
+				buttonComposition.classList.add('active');
+			});
+		}
+		buttonComposition.addEventListener('mouseenter', e => {
+			buttonComposition.classList.add('active');
+		});
+
+		buttonComposition.addEventListener('mouseleave', e => {
+			buttonComposition.classList.remove('active');
+		});
+	};
+	mobileComposition();
+
+
+
+
+/* end burger__composition*/

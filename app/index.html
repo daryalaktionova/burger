@@ -463,20 +463,20 @@
 			<div class="container">
 				<h2 class="section__title section__title--color-yellow">Закажите доставку</h2>
 				<div class="form">
-					<form class="form__layout">
+					<form class="form__layout" id="myForm">
 						<div class="form__column">
 							<div class="form__row">
 								<div class="form__field">
 									<label class="form__label" for="name">
 										Имя
 									</label>
-									<input type="text" class="form__input" id="name">
+									<input type="text" class="form__input" id="name" name="name">
 								</div>
 								<div class="form__field">
 									<label class="form__label" for="phone">
 										Телефон
 									</label>
-									<input type="text" class="form__input" id="phone">
+									<input type="text" class="form__input" id="phone" name="phone">
 								</div>
 							</div>
 							<div class="form__row">	
@@ -484,7 +484,7 @@
 									<label class="form__label" for="street">
 										Улица
 									</label>
-									<input type="text" class="form__input" id="street">
+									<input type="text" class="form__input" id="street" name="street">
 								</div>
 							</div>
 							<div class="form__row">
@@ -492,25 +492,25 @@
 										<label class="form__label" for="house">
 												Дом
 										</label>
-										<input type="text" class="form__input" id="house">
+										<input type="text" class="form__input" id="house" name="house">
 									</div>
 									<div class="form__field">
 										<label class="form__label" for="corpus">
 												Корпус
 										</label>
-										<input type="text" class="form__input" id="corpus">
+										<input type="text" class="form__input" id="corpus"name="corpus">
 									</div>
 									<div class="form__field">
 										<label class="form__label" for="apartment">
 												Квартира
 										</label>
-										<input type="text" class="form__input" id="apartment">
+										<input type="text" class="form__input" id="apartment" name="apartment">
 									</div>
 									<div class="form__field">
 										<label class="form__label" for="floor">
 												Этаж
 										</label>
-										<input type="text" class="form__input" id="floor">
+										<input type="text" class="form__input" id="floor" name="floor">
 									</div>
 							</div>
 						</div>
@@ -520,7 +520,7 @@
 										<label class="form__label" for="comment">
 												Комментарий
 										</label>
-										<textarea type="text" class="form__input" id="comment" rows="3"></textarea>
+										<textarea type="text" class="form__input" id="comment" rows="3" name="comment"></textarea>
 									</div>
 							</div>
 							<div class="form__row">
@@ -541,14 +541,14 @@
 							</div>
 							<div class="form__row">
 									<div class="form__field form__field--checkbox">
-										<input type="checkbox" class="form__checkbox" id="checkbox" hidden>
+										<input type="checkbox" class="form__checkbox" id="checkbox" hidden name="callback">
 										<label class="form__label form__checkbox-item" for="checkbox">
 												Не перезванивать
 										</label>
 									</div>
 							</div>
 							<div class="form__row form__row--submit">
-									<input type="submit" class="order-link order-link--submit" value="Заказать">
+									<input type="submit" id="send" class="order-link order-link--submit" value="Заказать">
 									<input type="reset" class="reset" value="Очистить">
 							</div>
 						</div>
