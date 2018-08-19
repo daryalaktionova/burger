@@ -1,0 +1,45 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(47, 50, 52, .92);
+}
+
+.popup {
+	position: relative;
+	background-color: $white;
+    @include ubuntu(light);
+	font-size: rem(14px);
+	width: rem(460px);
+	border-radius: rem(5px);
+	padding: rem(25px) rem(20px);
+	@include phones {
+		width: 95%;
+	}
+}
+
+.popup__title {
+    @include gagalin;
+	margin-bottom: rem(20px);
+}
+
+
+.popup__close {
+	position: absolute;
+	text-decoration: none;
+	top: rem(20px);
+	right: rem(20px);
+	width: 1.5625rem;
+	height: 1.5625rem;
+}
+
+.popup__close-image {
+	width: 100%;
+	height: 100%;
+	opacity: .7;
+}
