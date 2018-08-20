@@ -15,27 +15,32 @@
 	background-color: $white;
     @include ubuntu(light);
 	font-size: rem(14px);
-	width: rem(460px);
 	border-radius: rem(5px);
-	padding: rem(25px) rem(20px);
+	padding: rem(18px);
+	text-align: center;
 	@include phones {
 		width: 95%;
 	}
 }
 
-.popup__title {
-    @include gagalin;
-	margin-bottom: rem(20px);
+
+.popup__content {
+	margin-bottom: 16px;
 }
 
-
 .popup__close {
-	position: absolute;
 	text-decoration: none;
-	top: rem(20px);
-	right: rem(20px);
-	width: 1.5625rem;
-	height: 1.5625rem;
+	border-radius: 5px;
+	background-color: $red;
+	color: white;
+	@include ubuntu(medium);
+	text-transform: uppercase;
+	font-size: 13px;
+	padding-top: rem(10px);
+	padding-bottom: rem(10px);
+	padding-left: rem(12px);
+	padding-right: rem(12px);
+
 }
 
 .popup__close-image {

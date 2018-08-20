@@ -135,26 +135,10 @@ let popup = (function(options) {
 		let titleItem= document.createElement('div');
 		titleItem.classList.add('popup__title');
 
-		let title = content.querySelector(options.title).textContent;
-		
-
-    const xhr = new XMLHttpRequest();
-    xhr.responseType = 'json';
-    //xhr.open('GET', 'https://webdev-api.loftschool.com/sendmail/fail'); //для отрицательного ответа
-    xhr.open('POST', 'http://test.local/mail.php');   //для положительного ответа
-    xhr.send();
-    xhr.addEventListener('load', () => {
-      
-      if(xhr.status>=400) {
-          contentText.innerHTML = 'Ошибка отправки данных';
-      } else {
-        if(xhr.response.status) {
-           contentText.innerHTML = text;
-           titleItem.innerHTML = title;
-          console.log(text);
-      }
-      }
-    })
+    let title = content.querySelector(options.title).textContent;
+    contentText.innerHTML = 'Ошибка отправки данных';
+    contentText.innerHTML = text;
+    titleItem.innerHTML = title;
 
 		let closeIcon = document.createElement("a");
 		closeIcon.classList.add("popup__close");
@@ -196,13 +180,11 @@ popup({
 /* end popup */
 
 /* form*/
-const myForm = document.querySelector('#myForm');
-const send = document.querySelector('#send');
 
+let formFunction = (function(options) {
 
-send.addEventListener('click', event => {
-  event.preventDefault();
-
+  const myForm = document.querySelector('#myForm');
+  const send = document.querySelector('#send');
   const data = {
     name: myForm.elements.name.value,
     phone: myForm.elements.phone.value,
@@ -210,17 +192,81 @@ send.addEventListener('click', event => {
     to: "segezmundovna@gmail.com"
   };
 
-  const xhr = new XMLHttpRequest();
-  xhr.responseType='json';
-  xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-  xhr.send(JSON.stringify(data));
-  xhr.addEventListener('load', () => {
-    if(xhr.response.status) {
-      console.log(xhr.response.status);
-    }
-  });
+	let _ajaxInquiry = (function(e){
+    e.preventDefault();
+		let overlay = document.createElement('div');
+		overlay.classList.add('overlay');
+		let popupWindow = document.createElement('div');
+		popupWindow.classList.add('popup');
+		let contentText = document.createElement('div');
+		contentText.classList.add('popup__content');
+
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
+    //xhr.open('GET', 'https://webdev-api.loftschool.com/sendmail/fail'); //для отрицательного ответа
+    xhr.open('POST', 'http://test.local/mail.php');   //для положительного ответа
+    xhr.send(JSON.stringify(data));
+    xhr.addEventListener('load', () => {
+      
+      if(xhr.status>=400) {
+        let content = 'Ошибка, данные не отправлены, попробуйте позже';
+        console.log(content);
+        contentText.innerHTML = content;
+      } else {
+        if(xhr.response.status) {
+          let content = 'Сообщение отправлено';
+          console.log(content);
+          contentText.innerHTML = content;
+      }
+      }
+    })
+    
+		let closeIcon = document.createElement("a");
+		closeIcon.classList.add("popup__close");
+		closeIcon.innerHTML = 'Закрыть';
+		closeIcon.href = "#";
+		closeIcon.addEventListener("click", (function(e){
+			e.preventDefault();
+			_closePopup(overlay);
+    }));
+
+
+		overlay.appendChild(popupWindow);
+		popupWindow.appendChild(contentText);
+		popupWindow.appendChild(closeIcon);
+    document.body.appendChild(overlay);
+  
+	});
+
+	let _closePopup = (function(overlay) {
+		document.body.removeChild(overlay);
+	});
+
+	let addListeners = (function() {
+    send.addEventListener('click', _ajaxInquiry)
+	});
+
+	return {
+		init: addListeners
+	}
+});
+
+formFunction({
+	text: ".reviews__text"
+}).init();
+
+
+/*
+send.addEventListener('click', event => {
+  event.preventDefault();
+
+  
+
+
 
 });
+*/
+
 
 /*end form */
 
@@ -268,3 +314,30 @@ let mobileComposition = () => {
 
 
 /* end burger__composition*/
+
+
+/* start slider
+let slider = options => {
+  let wrapper = document.querySelector(options.wrapper);
+  let list = document.querySelector(options.list);
+  let items = document.querySelectorAll(options.item);
+  let left = document.querySelector(options.left);
+  let right = document.querySelector(options.right);
+  let currentSlide = 0;
+
+
+
+
+
+
+}({
+  wrapper: '.burger-wrapper',
+  list: '.burger-list',
+  item: '.burger__item',
+  right: '.burger__arrows-item--right',
+  left: '.burger__arrows-item--right'
+})
+
+
+
+/*end slider*/
