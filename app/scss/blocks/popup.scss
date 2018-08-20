@@ -29,6 +29,15 @@
 }
 
 .popup__close {
+	position: absolute;
+	text-decoration: none;
+	top: rem(20px);
+	right: rem(20px);
+	width: 1.5625rem;
+	height: 1.5625rem;
+
+}
+.popup__close-button {
 	text-decoration: none;
 	border-radius: 5px;
 	background-color: $red;

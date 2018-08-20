@@ -222,7 +222,7 @@ let formFunction = (function(options) {
     })
     
 		let closeIcon = document.createElement("a");
-		closeIcon.classList.add("popup__close");
+		closeIcon.classList.add("popup__close-button");
 		closeIcon.innerHTML = 'Закрыть';
 		closeIcon.href = "#";
 		closeIcon.addEventListener("click", (function(e){
