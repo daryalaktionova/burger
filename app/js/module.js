@@ -197,7 +197,7 @@ let formFunction = (function(options) {
 		let overlay = document.createElement('div');
 		overlay.classList.add('overlay');
 		let popupWindow = document.createElement('div');
-		popupWindow.classList.add('popup');
+		popupWindow.classList.add('popup--form');
 		let contentText = document.createElement('div');
 		contentText.classList.add('popup__content');
 

@@ -17,6 +17,20 @@
 	font-size: rem(14px);
 	border-radius: rem(5px);
 	padding: rem(18px);
+	width: rem(460px);
+	text-align: center;
+	@include phones {
+		width: 95%;
+	}
+}
+
+.popup--form {
+	position: relative;
+	background-color: $white;
+    @include ubuntu(light);
+	font-size: rem(14px);
+	border-radius: rem(5px);
+	padding: rem(18px);
 	text-align: center;
 	@include phones {
 		width: 95%;
