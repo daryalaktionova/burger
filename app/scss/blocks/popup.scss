@@ -18,7 +18,6 @@
 	border-radius: rem(5px);
 	padding: rem(18px);
 	width: rem(460px);
-	text-align: center;
 	@include phones {
 		width: 95%;
 	}
@@ -37,6 +36,10 @@
 	}
 }
 
+.popup__title {
+	@include gagalin;
+	margin-bottom: rem(20px);
+}
 
 .popup__content {
 	margin-bottom: 16px;

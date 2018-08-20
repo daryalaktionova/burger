@@ -210,12 +210,13 @@ let formFunction = (function(options) {
       
       if(xhr.status>=400) {
         let content = 'Ошибка, данные не отправлены, попробуйте позже';
-        console.log(content);
         contentText.innerHTML = content;
       } else {
         if(xhr.response.status) {
           let content = 'Сообщение отправлено';
-          console.log(content);
+          contentText.innerHTML = content;
+      } else {
+          let content = 'Соединение с сервером не установлено';
           contentText.innerHTML = content;
       }
       }
