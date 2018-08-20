@@ -256,18 +256,6 @@ formFunction({
 }).init();
 
 
-/*
-send.addEventListener('click', event => {
-  event.preventDefault();
-
-  
-
-
-
-});
-*/
-
-
 /*end form */
 
 /* start burger__composition */
@@ -316,27 +304,68 @@ let mobileComposition = () => {
 /* end burger__composition*/
 
 
-/* start slider
 let slider = options => {
-  let wrapper = document.querySelector(options.wrapper);
-  let list = document.querySelector(options.list);
-  let items = document.querySelectorAll(options.item);
-  let left = document.querySelector(options.left);
-  let right = document.querySelector(options.right);
-  let currentSlide = 0;
+	let wrapper = document.querySelector(options.wrapper);
+	let width = wrapper.clientWidth;
+	wrapper.style.width = width  + 'px';
+	let step = width;
+	let list = document.querySelector(options.list);
+	let items = document.querySelectorAll(options.item);
 
+	let left = document.querySelector(options.left);
+	let right = document.querySelector(options.right);
 
+	items.forEach(element => {
+		element.style.width = width  + 'px';
+	});
 
+	let positionMaxRight = width * (items.length - 1);
 
+	let positionRight = 0;
 
+	let _right = position => {
+		if (position <= positionMaxRight) {
+			positionRight = positionRight + step;
+			list.style.right = positionRight + "px";
+		}
+	};
 
-}({
-  wrapper: '.burger-wrapper',
-  list: '.burger-list',
-  item: '.burger__item',
-  right: '.burger__arrows-item--right',
-  left: '.burger__arrows-item--right'
-})
+	let _left = position => {
+		if (position >= 0) {
+			positionRight = positionRight - step;
+			list.style.right = positionRight + "px";
+		}
+	};
+
+	let initial = () => {
+		list.style.right = positionRight;
+
+		right.addEventListener("click", e => {
+			e.preventDefault();
+
+			_right(positionRight + step);
+		});
+
+		left.addEventListener("click", e => {
+			e.preventDefault();
+
+			_left(positionRight - step);
+		});
+
+	};
+
+	return {
+		init: initial
+	}
+};
+
+slider({
+	wrapper: '.burger__wrapper',
+	list: '.burger__list',
+	item: '.burger__item',
+	right: '.burger__arrows-item--right',
+	left: '.burger__arrows-item--left'
+}).init();
 
 
 
