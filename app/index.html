@@ -29,7 +29,7 @@
 								<a href="#team" class="top-bar__link">Команда</a>
 							</li>
 							<li class="top-bar__item">
-								<a href="#" class="top-bar__link">Меню</a>
+								<a href="#menu" class="top-bar__link">Меню</a>
 							</li>
 							<li class="top-bar__item">
 								<a href="#reviews" class="top-bar__link">Отзывы</a>
@@ -38,7 +38,7 @@
 								<a href="#" class="top-bar__link">Как мы работаем</a>
 							</li>
 							<li class="top-bar__item">
-								<a href="#" class="top-bar__link">Контакты</a>
+								<a href="#footer" class="top-bar__link">Контакты</a>
 							</li>
 							
 						</ul>
@@ -128,7 +128,116 @@
 				</div>
 			</div>
 		</section>
-		<section class="section burgers"></section>
+		<section class="section burgers" id="burgers">
+			<div class="container">
+				<div class="burger">
+					<div class="burger__wrapper">
+						<ul class="burger__list">
+							<li class="burger__item">
+								<div class="burger___left-column">
+									<div class="burger__image-wrapper">
+										<img src="./images/section-burger/burger.png" alt="burger" class="burger__image">
+									</div>
+								</div>
+								<div class="burger___right-column">
+									<div class="burger__information">
+										<h2 class="section__title section__title--color-white section__title--text-align-left">Dark Beef Burger</h2>
+										<div class="burger__description">
+											<p>
+												Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, 
+												двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
+											</p>
+										</div>
+										<div class="burger__order">
+											<div class="burger__price">
+												<div class="burger__price-nubmber">500</div>
+												<div class="burger__price-text">рублей</div>
+											</div>
+											<a href="#" class="order-link">Заказать</a>
+										</div>
+										<div class="burger__caloricity">
+											<div class="burger__caloricity-number">1200</div>
+											<div class="burger__caloricity-unit">ккал</div>
+										</div>
+										<div class="burger__composition">
+											<svg class="burger__composition-image">
+													<use xlink:href="./images/icons/sprite.svg#burger"></use>
+											</svg>
+											<div class="burger__composition-title">Состав</div>
+											<div class="burger__composition-menu dropdown">
+												<ul class="dropdown__list">
+													<li class="dropdown__item">
+														<svg class="dropdown__image">
+															<use xlink:href="./images/icons/sprite.svg#beef"></use>
+														</svg>
+														<div class="dropdown__text">Говядина</div>
+														<div class="dropdown__weight">300г</div>
+													</li>
+													<li class="dropdown__item">
+														<svg class="dropdown__image">
+															<use xlink:href="./images/icons/sprite.svg#buns"></use>
+														</svg>
+														<div class="dropdown__text">Булочки</div>
+														<div class="dropdown__weight">100г</div>
+													</li>
+													<li class="dropdown__item">
+														<svg class="dropdown__image">
+															<use xlink:href="./images/icons/sprite.svg#salad"></use>
+														</svg>
+														<div class="dropdown__text">Зелень</div>
+														<div class="dropdown__weight">70г</div>
+													</li>
+													<li class="dropdown__item">
+														<svg class="dropdown__image">
+															<use xlink:href="./images/icons/sprite.svg#sauce"></use>
+														</svg>
+														<div class="dropdown__text">Соус</div>
+														<div class="dropdown__weight">150г</div>
+													</li>
+													<li class="dropdown__item">
+														<svg class="dropdown__image">
+															<use xlink:href="./images/icons/sprite.svg#cucumber"></use>
+														</svg>
+														<div class="dropdown__text">Овощи</div>
+														<div class="dropdown__weight">200г</div>
+													</li>
+													<li class="dropdown__item">
+														<svg class="dropdown__image">
+															<use xlink:href="./images/icons/sprite.svg#cheese"></use>
+														</svg>
+														<div class="dropdown__text">Сыр</div>
+														<div class="dropdown__weight">80г</div>
+													</li>
+												</ul>
+												<a href="" class="dropdown__close">
+													<svg class="dropdown__close-image">
+														<use xlink:href="./images/icons/sprite.svg#close"></use>
+													</svg>
+												</a>
+											</div>
+										</div>	
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="burger__arrows">
+						<a href="#" class="burger__arrows-item burger__arrows-item--right">
+							<svg class="burger__arrows-picture">
+								<use xlink:href="./images/icons/sprite.svg#arrow-scroll">
+								</use>
+							</svg>
+						</a>
+						<a href="#" class="burger__arrows-item burger__arrows-item--left">
+							<svg class="burger__arrows-picture">
+								<use xlink:href="./images/icons/sprite.svg#arrow-scroll">
+								</use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 		<section class="section team" id="team">
 			<div class="team__content">
 				<h2 class="section__title section__title--color-yellow section__title--text-align-left">Команда</h2>
@@ -186,7 +295,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section menu">
+		<section class="section menu" id="menu">
 			<h2 class="section__title section__title--color-white section__title--padding-top-left">Меню</h2>
 			<div class="accordeon-menu">
 				<ul class="accordeon-menu__list">
@@ -347,10 +456,10 @@
 				</li>
 			</ul>
 		</section>
-		<section class="section how-are-work">
+		<section class="section how-are-work" id="how-are-work">
 
 		</section>
-		<section class="section form-section">
+		<section class="section form-section" id="form-section">
 			<div class="container">
 				<h2 class="section__title section__title--color-yellow">Закажите доставку</h2>
 				<div class="form">
@@ -447,7 +556,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section">
+		<section class="section" id="footer">
 			<div class="map"></div>
 				<footer class="footer">
 						<div class="container container--footer">
@@ -533,11 +642,22 @@
 			</li>
 		</ul>
 	</div>
-	<a href="#" class="hamburger-bar">
+	<a href="#" class="hamburger-bar" id="toggle">
 		<div class="hamburger-bar__element">
-
 		</div>
 	</a>
+	<nav class="overlay-menu" id="overlay">
+		<ul class="overlay-menu__list">
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#best">о нас</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#burgers">бургеры</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#team">команда</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#menu">меню</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#reviews">отзывы</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#how-are-work">как мы работаем</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#footer">контакты</a></li>
+		</ul>
+	</nav>
+<script src="./js/module.js"></script>
 </div>
 </body>
 </html>

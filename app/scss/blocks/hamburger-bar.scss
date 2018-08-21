@@ -9,7 +9,7 @@
 		display: flex;
 		position: fixed;
 		top: rem(36px);
-		right: rem(30px);
+		right: rem(22px);
 	}
 }
 
@@ -34,3 +34,28 @@
 		bottom: 0;
 	}
 }
+
+.hamburger-bar--active {
+	opacity: 0.7;
+}
+
+
+
+
+.hamburger-bar--active .hamburger-bar__element {
+	visibility: hidden;
+}
+
+.hamburger-bar--active .hamburger-bar__element:before {
+	transform: translateY(8px) translateX(0) rotate(45deg);
+	border-radius: 5px;
+	visibility: visible;
+	transition: 0.5s;
+}
+.hamburger-bar--active .hamburger-bar__element:after {
+	transform: translateY(-10px) translateX(0) rotate(-45deg);
+	border-radius: 5px; 
+	visibility: visible;
+	transition: 0.5s;
+}
+
