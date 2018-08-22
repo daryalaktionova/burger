@@ -40,6 +40,7 @@
     overflow: hidden;
     display: inline-flex;
     overflow: hidden;
+    transition: .7s ease;
     @include tablets {
         width: auto;
         flex: 1;

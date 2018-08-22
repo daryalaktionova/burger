@@ -82,6 +82,7 @@
     max-height: 0;
     font-size: 14px;
     overflow: hidden;
+    transition: .7s ease;
 	@include tablets {
         width: 75%;
         margin: 0 auto;

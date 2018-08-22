@@ -44,21 +44,21 @@ let teamAccordeon = (function() {
 
     let linkAccordeon = document.querySelectorAll('.accordeon__link');
     
-    let forEachAccordeon = linkAccordeon.forEach(function(personName) {
+    linkAccordeon.forEach(function(personName) {
     personName.addEventListener('click', function(e) {
           e.preventDefault();
           let activePerson = document.querySelector('.accordeon__item.accordeon__item--is-active');
           if(activePerson) {
             let teamAccordeonDetails = activePerson.querySelector('.accordeon-content');
-            teamAccordeonDetails.style.height = "";
+            teamAccordeonDetails.style.maxHeight = "";
             activePerson.classList.remove('accordeon__item--is-active');
           }
-
-          if(!activePerson || activePerson.linkAccordeon !== this) {
+					
+          if(!activePerson || activePerson.querySelector('.accordeon__link') !== this) {
             let currentPerson = this.closest('.accordeon__item');
             currentPerson.classList.add('accordeon__item--is-active');
             let currentPersonInfo = currentPerson.querySelector('.accordeon-content');
-            currentPersonInfo.style.height = currentPersonInfo.scrollHeight + 'px';
+            currentPersonInfo.style.maxHeight = currentPersonInfo.scrollHeight + 'px';
           }
         })
     })
@@ -85,15 +85,15 @@ let menuAccordeon = (function() {
           let activeCategory = document.querySelector('.accordeon-menu__item.accordeon-menu__item--is-active');
           if(activeCategory) {
             let menuAccordeonDetails = activeCategory.querySelector('.accordeon-menu__item-content');
-            menuAccordeonDetails.style.width = "";
+            menuAccordeonDetails.style.maxWidth = "";
             activeCategory.classList.remove('accordeon-menu__item--is-active');
           }
 
-          if(!activeCategory|| activeCategory.linkMenuAccordeon !== this) {
+          if(!activeCategory|| activeCategory.querySelector('.accordeon-menu__link') !== this) {
             let currentCategory = this.closest('.accordeon-menu__item');
             currentCategory.classList.add('accordeon-menu__item--is-active');
             let currentCategoryInfo = currentCategory.querySelector('.accordeon-menu__item-content');
-            currentCategoryInfo.style.width = neededWidth;
+            currentCategoryInfo.style.maxWidth = neededWidth;
           }
         })
     })
