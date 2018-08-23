@@ -270,14 +270,45 @@ let isMobile = () => {
 };
 
 let mobileComposition = () => {
-		let buttonComposition = document.querySelector('.burger__composition');
-		let buttonCloseComposition = document.querySelector('.dropdown__close');
+		let slide = document.querySelector('.burger');
+		
 
+
+
+slide.onmouseenter = function(e) {
+			let target = e.target;
+			let buttonComposition = target.querySelector('.burger__composition');
+			if(buttonComposition) {
+				console.log(buttonComposition);
+				buttonComposition.classList.add('active');
+			} else {
+				return;
+			}
+			
+}
+
+slide.onmouseleave = function(e) {
+	let target = e.target;
+	let buttonComposition = target.querySelector('.burger__composition');
+	if(buttonComposition) {
+		console.log(buttonComposition);
+		buttonComposition.classList.remove('active');
+	} else {
+		return;
+	}
+	
+}
+
+
+
+/*
 		buttonCloseComposition.addEventListener('click', e => {
 			e.preventDefault();
 
 			buttonComposition.classList.remove('active');
 		});
+
+
 		buttonCloseComposition.addEventListener('touchstart', e => {
 			e.preventDefault();
 
@@ -289,21 +320,28 @@ let mobileComposition = () => {
 				buttonComposition.classList.add('active');
 			});
 		}
-		buttonComposition.addEventListener('mouseenter', e => {
-			buttonComposition.classList.add('active');
-		});
+	
 
-		buttonComposition.addEventListener('mouseleave', e => {
+		let _removeClass = () => {
 			buttonComposition.classList.remove('active');
-		});
+		}
+
+		for (i=0;i<buttonCompositionAll.length;i++){
+			buttonCompositionAll[i].addEventListener('mouseenter', _addClass);
+			buttonCompositionAll[i].addEventListener('mouseleave', _removeClass);
+		}
+*/
 	};
+
 	mobileComposition();
+
 
 
 
 
 /* end burger__composition*/
 
+/* slider*/
 
 let slider = options => {
 	let wrapper = document.querySelector(options.wrapper);
