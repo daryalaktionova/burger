@@ -270,66 +270,34 @@ let isMobile = () => {
 };
 
 let mobileComposition = () => {
-		let slide = document.querySelector('.burger');
+		let burgersCompositions = document.querySelectorAll('.burger__composition');
+		let buttonsCloseComposition = document.querySelectorAll('.dropdown__close-image');
 
-	slide.onmouseenter =  function(e) {
-			let target = e.target;
-			let buttonComposition = target.querySelectorAll('.burger__composition');
-			if(target.className == 'burger__composition') {
-				console.log('123');
-				console.log(buttonComposition);
-				buttonComposition.classList.add('active');
-			} else {
-				return;
-			}
-			
-};
-
-slide.onmouseleave = function(e) {
-	let target = e.target;
-	let buttonComposition = target.querySelector('.burger__composition');
-	if(buttonComposition) {
-		buttonComposition.classList.remove('active');
-	} else {
-		return;
-	}
-	
-}
-
-
-
-/*
-		buttonCloseComposition.addEventListener('click', e => {
-			e.preventDefault();
-
-			buttonComposition.classList.remove('active');
+	for (i=0;i<burgersCompositions.length;i++){
+		burgersCompositions[i].addEventListener('mouseenter', e => {
+			document.querySelector('.burger__composition').classList.add('active');
 		});
-
-
-		buttonCloseComposition.addEventListener('touchstart', e => {
-			e.preventDefault();
-
-			buttonComposition.classList.remove('active');
-		});
-
 		if (isMobile) {
-			buttonComposition.addEventListener('click', e => {
-				buttonComposition.classList.add('active');
+			burgersCompositions[i].addEventListener('click', e => {
+				document.querySelector('.burger__composition').classList.add('active');
 			});
 		}
-	
+	}
 
-		let _removeClass = () => {
-			buttonComposition.classList.remove('active');
-		}
+	for (i=0;i<burgersCompositions.length;i++){
+		burgersCompositions[i].addEventListener('mouseleave', e => {
+			document.querySelector('.burger__composition').classList.remove('active');
+		});
+	}
 
-		for (i=0;i<buttonCompositionAll.length;i++){
-			buttonCompositionAll[i].addEventListener('mouseenter', _addClass);
-			buttonCompositionAll[i].addEventListener('mouseleave', _removeClass);
+
+	for (i=0;i<buttonsCloseComposition.length;i++){
+			buttonsCloseComposition[i].addEventListener('click', e => {
+				e.preventDefault();
+				document.querySelector('.burger__composition').classList.remove('active');
+			});
 		}
-*/
 	};
-
 	mobileComposition();
 
 
@@ -474,3 +442,37 @@ function init() {
 }
 
 /*end map */
+
+
+/*start OPS 
+const sections = $('.section');
+const display = $('.content');
+let inscroll = false;
+
+const performTransition = sectionEq => {
+	const position = (sectionEq * -100) + '%';
+
+	sections.eq(sectionEq).addClass('active').
+	siblings().removeClass('active');
+
+	display.css({
+		'transform': 'translateY({position})'
+	});
+}
+
+const scrollToSection = direction => {
+	
+}
+
+$('.wrapper').on('wheel', e => {
+	const deltaY = e.originalEvent.deltaY;
+	console.log('ghbdtn');
+	if(deltaY>0) { //скролим вниз
+		scrollToSection('up');
+	}
+	if(deltaY<0) {
+
+	}
+})
+
+/*end OPS */
