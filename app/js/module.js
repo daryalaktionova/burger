@@ -445,34 +445,6 @@ function init() {
 
 
 /*start OPS 
-const sections = $('.section');
-const display = $('.content');
-let inscroll = false;
 
-const performTransition = sectionEq => {
-	const position = (sectionEq * -100) + '%';
-
-	sections.eq(sectionEq).addClass('active').
-	siblings().removeClass('active');
-
-	display.css({
-		'transform': 'translateY({position})'
-	});
-}
-
-const scrollToSection = direction => {
-	
-}
-
-$('.wrapper').on('wheel', e => {
-	const deltaY = e.originalEvent.deltaY;
-	console.log('ghbdtn');
-	if(deltaY>0) { //скролим вниз
-		scrollToSection('up');
-	}
-	if(deltaY<0) {
-
-	}
-})
 
 /*end OPS */
