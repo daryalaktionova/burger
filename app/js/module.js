@@ -271,27 +271,24 @@ let isMobile = () => {
 
 let mobileComposition = () => {
 		let slide = document.querySelector('.burger');
-		
 
-
-
-slide.onmouseenter = function(e) {
+	slide.onmouseenter =  function(e) {
 			let target = e.target;
-			let buttonComposition = target.querySelector('.burger__composition');
-			if(buttonComposition) {
+			let buttonComposition = target.querySelectorAll('.burger__composition');
+			if(target.className == 'burger__composition') {
+				console.log('123');
 				console.log(buttonComposition);
 				buttonComposition.classList.add('active');
 			} else {
 				return;
 			}
 			
-}
+};
 
 slide.onmouseleave = function(e) {
 	let target = e.target;
 	let buttonComposition = target.querySelector('.burger__composition');
 	if(buttonComposition) {
-		console.log(buttonComposition);
 		buttonComposition.classList.remove('active');
 	} else {
 		return;
@@ -409,3 +406,71 @@ slider({
 
 
 /*end slider*/
+
+
+/*start map */
+var placemarks = [
+	{
+		latitude: 59.97, 
+		langetude: 30.31,
+		hintContent: 'ул. Литераторов, дом 10',
+		balloonContent: 'Самые вкусные бургеры у нас!'
+
+	},
+	{
+		latitude: 59.94, 
+		langetude: 30.25,
+		hintContent: 'Малый проспект В О, дом 64',
+		balloonContent: 'Самые вкусные бургеры у нас!'
+	},
+	{
+		latitude: 59.93, 
+		langetude: 30.34,
+		hintContent: 'наб. реки Фонтанки, д. 56',
+		balloonContent: 'Самые вкусные бургеры у нас!'
+	}
+];
+
+
+ymaps.ready(init);
+
+geoObjects = [];
+
+function init() {
+	var map = new ymaps.Map('map', {
+		center: [59.94, 30.32],
+		zoom: 12,
+		controls: ['zoomControl'],
+		behaviors: ['drag']
+	});
+
+	for(var i=0; i < placemarks.length; i++) {
+		geoObjects[i] = new ymaps.Placemark([placemarks[i].latitude, placemarks[i].langetude], 
+			{
+				hintContent: placemarks[i].hintContent,
+				balloonContent: placemarks[i].balloonContent
+			},
+			{
+				iconLayout: 'default#image',
+				iconImageHref: 'images/icons/map-marker.svg',
+				iconImageSize: [46, 57],
+				iconImageOffset: [-23, -57]
+			});	
+	}
+
+	var clusterer = new ymaps.Clusterer({
+		clusterIcons: [
+			{
+				href: "/images/section-main/burger.png",
+				size: [100, 100],
+				offset: [-50, -50]
+			}
+		],
+		clusterIconContentLayout: null
+	});
+	
+	map.geoObjects.add(clusterer);
+	clusterer.add(geoObjects);
+}
+
+/*end map */
