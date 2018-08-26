@@ -444,7 +444,60 @@ function init() {
 /*end map */
 
 
-/*start OPS 
+/*start OPS */
+const sections = $('.section');
+const display = $('.content');
+let inscroll = false;
 
+const performTransition = sectionEq => {
+	
+	if(inscroll) return;
+
+	inscroll = true;
+
+	const position = (sectionEq * -100) + '%';
+
+
+	sections.eq(sectionEq)
+		.addClass('active')
+		.siblings()
+		.removeClass('active');
+
+	setTimeout(() => {
+		inscroll = false;
+	}, 1300);
+	display.css({
+		'transform' : 'translateY(' + (position) + ')'
+	});
+	
+}
+
+const scrollToSection = direction => {
+	const activeSection = sections.filter('.active');
+	const prevSection = activeSection.prev();
+	const nextSection = activeSection.next();
+
+	if(direction == 'up' && nextSection.length) {
+		performTransition(nextSection.index());
+	}
+
+	if(direction == "down" && prevSection.length) {
+		performTransition(prevSection.index());
+	}
+}
+
+$('.wrapper').on('wheel', e => {
+	const deltaY = e.originalEvent.deltaY;
+
+
+	if(deltaY>0) { //скролим наверх
+		scrollToSection('up');
+	}
+
+	if(deltaY<0) { //скроллим вниз
+		scrollToSection('down');
+	}
+	console.log(deltaY);
+});
 
 /*end OPS */
