@@ -447,6 +447,8 @@ function init() {
 /*start OPS */
 const sections = $('.section');
 const display = $('.content');
+const dots = $('.paginator__item');
+
 let inscroll = false;
 
 const md = new MobileDetect(window.navigator.userAgent);
@@ -467,6 +469,11 @@ const performTransition = sectionEq => {
 		.addClass('active')
 		.siblings()
 		.removeClass('active');
+
+	dots.eq(sectionEq)
+		.addClass('paginator__item--active')
+		.siblings()
+		.removeClass('paginator__item--active');
 
 	setTimeout(() => {
 		inscroll = false;
