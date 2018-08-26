@@ -472,17 +472,25 @@ const performTransition = sectionEq => {
 	
 }
 
-const scrollToSection = direction => {
+const defineSections = sections => {
 	const activeSection = sections.filter('.active');
-	const prevSection = activeSection.prev();
-	const nextSection = activeSection.next();
-
-	if(direction == 'up' && nextSection.length) {
-		performTransition(nextSection.index());
+	return {
+		activeSection: activeSection,
+		nextSection: activeSection.next(),
+		prevSection: activeSection.prev()
 	}
 
-	if(direction == "down" && prevSection.length) {
-		performTransition(prevSection.index());
+}
+
+const scrollToSection = direction => {
+	const section = defineSections(sections);
+
+	if(direction == 'up' && section.nextSection.length) {
+		performTransition(section.nextSection.index());
+	}
+
+	if(direction == "down" && section.prevSection.length) {
+		performTransition(section.prevSection.index());
 	}
 }
 
@@ -494,10 +502,31 @@ $('.wrapper').on('wheel', e => {
 		scrollToSection('up');
 	}
 
-	if(deltaY<0) { //скроллим вниз
+	if(deltaY<0) { //скролим вниз
 		scrollToSection('down');
 	}
 	console.log(deltaY);
 });
+
+
+/*OPS keyboard */
+$(document).on('keydown', e => {
+
+	console.log(e.keyCode);
+	switch(e.keyCode) {
+		case 40: //up
+			scrollToSection('up')
+			break;
+
+		case 38: //down
+			scrollToSection('down')
+			break;
+
+	
+	}
+
+});
+
+
 
 /*end OPS */
