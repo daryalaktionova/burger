@@ -633,6 +633,26 @@
 		<section class="section how-are-work" id="how-are-work">
 			<div class="container">
 				<h2 class="section__title">Как мы работаем</h2>
+				<div class="video__container">
+					<div class="video__player">
+						<video id="player" poster="./images/section-how-work/player/cover.png">
+							<source src="./images/section-how-work/video/video.mp4" type="video/mp4">
+						</video>
+						<img src="./images/section-how-work/player/Play_white.png" alt="" class="play video__player-img">
+					</div>
+					<div class="video__toolbar">
+						<div class="duration">
+							<img src="./images/section-how-work/player/Play_gray.png" alt="" class="play duration__img">
+							<input type="range" class="duration__length" id="durationLevel">
+						</div>
+						<div class="sound">
+							<img src="./images/section-how-work/player/Volum_gray.png" class="sound__mic" id="mic" alt="">
+							<div class="sound__volume">
+								<input type="range" class="duration__length duration__length--other" id="micLevel">
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section class="section form-section" id="form-section">
@@ -841,7 +861,7 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.2/mobile-detect.min.js"></script>
-<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.js"></script>
 <script src="./js/module.js"></script>
 </div>
 </body>
