@@ -449,11 +449,16 @@ const sections = $('.section');
 const display = $('.content');
 let inscroll = false;
 
+const md = new MobileDetect(window.navigator.userAgent);
+const isItMobile = md.mobile();
+
 const performTransition = sectionEq => {
 	
 	if(inscroll) return;
 
 	inscroll = true;
+
+	sectionEq = parseInt(sectionEq);
 
 	const position = (sectionEq * -100) + '%';
 
@@ -494,18 +499,15 @@ const scrollToSection = direction => {
 	}
 }
 
-$('.wrapper').on('wheel', e => {
-	const deltaY = e.originalEvent.deltaY;
-
-
-	if(deltaY>0) { //скролим наверх
-		scrollToSection('up');
-	}
-
-	if(deltaY<0) { //скролим вниз
-		scrollToSection('down');
-	}
-	console.log(deltaY);
+$('.wrapper').on({
+	wheel: e => {
+		const deltaY = e.originalEvent.deltaY;
+		const direction = (deltaY>0) 
+		? 'up' 
+		: 'down';
+		scrollToSection(direction);
+	},
+	touchmove: e => (e.preventDefault())
 });
 
 
@@ -521,12 +523,28 @@ $(document).on('keydown', e => {
 		case 38: //down
 			scrollToSection('down')
 			break;
-
-	
 	}
 
 });
 
+$('[data-scroll-to]').on('click', e => {
+	e.preventDefault();
+	const sectionNum = $(e.currentTarget).attr('data-scroll-to');
+	performTransition(sectionNum);
+})
+
+
+/*start mobile ops */
+if(isItMobile) {
+	$(window).swipe( {
+		swipe:function(
+			event,
+			direction
+		) {
+			scrollToSection(direction);
+		}
+	});
+}
 
 
 /*end OPS */

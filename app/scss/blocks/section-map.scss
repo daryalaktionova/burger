@@ -21,7 +21,8 @@
     @include phones {
 		width: 100%;
 		text-align: center;
-		margin-bottom: rem(15px);
+        margin-bottom: rem(15px);
+        padding: rem(10px) 0;
 	}
 }
 .contacts__address {

@@ -22,30 +22,30 @@
 					<nav class="top-bar">
 						<ul class="top-bar__list">
 							<li class="top-bar__item">
-								<a href="#best" class="top-bar__link">О нас</a>
+								<a href="#" class="top-bar__link" data-scroll-to="1">О нас</a>
 							</li>
 							<li class="top-bar__item">
-								<a href="#" class="top-bar__link">Бургеры</a>
+								<a href="#" class="top-bar__link" data-scroll-to="2">Бургеры</a>
 							</li>
 							<li class="top-bar__item">
-								<a href="#team" class="top-bar__link">Команда</a>
+								<a href="#" class="top-bar__link" data-scroll-to="3">Команда</a>
 							</li>
 							<li class="top-bar__item">
-								<a href="#menu" class="top-bar__link">Меню</a>
+								<a href="#" class="top-bar__link" data-scroll-to="4">Меню</a>
 							</li>
 							<li class="top-bar__item">
-								<a href="#reviews" class="top-bar__link">Отзывы</a>
+								<a href="#" class="top-bar__link" data-scroll-to="5">Отзывы</a>
 							</li>
 							<li class="top-bar__item">
-								<a href="#" class="top-bar__link">Как мы работаем</a>
+								<a href="#" class="top-bar__link" data-scroll-to="6">Как мы работаем</a>
 							</li>
 							<li class="top-bar__item">
-								<a href="#footer" class="top-bar__link">Контакты</a>
+								<a href="#" class="top-bar__link" data-scroll-to="8">Контакты</a>
 							</li>
 							
 						</ul>
 					</nav>
-					<a href="#" class="order-link order-link--header">Заказать</a>
+					<a href="#" class="order-link order-link--header" data-scroll-to="7">Заказать</a>
 				</header>
 				<div class="main-content">
 					<div class="main__img-wrapper">
@@ -57,7 +57,7 @@
 					</div>
 				</div>
 				<div class="main__wrapper-down">
-					<a href="#" class="main__button-down">
+					<a href="#" class="main__button-down" data-scroll-to="1">
 						<svg class="main__button-down-icon">
 							<use xlink:href="./images/icons/sprite.svg#arrow-scroll">
 							</use>
@@ -791,28 +791,31 @@
 	<div class="paginator">
 		<ul class="paginator__list">
 			<li class="paginator__item paginator__item--active">
-				<a href="#main" class="paginator__link"></a>
+				<a href="#" class="paginator__link" data-scroll-to="0"></a>
 			</li>
 			<li class="paginator__item">
-				<a href="#best" class="paginator__link"></a>
+				<a href="#" class="paginator__link" data-scroll-to="1"></a>
 			</li>
 			<li class="paginator__item">
-				<a href="#" class="paginator__link"></a>
+				<a href="#" class="paginator__link" data-scroll-to="2"></a>
 			</li>
 			<li class="paginator__item">
-				<a href="#team" class="paginator__link"></a>
+				<a href="#" class="paginator__link" data-scroll-to="3"></a>
 			</li>
 			<li class="paginator__item">
-				<a href="#" class="paginator__link"></a>
+				<a href="#" class="paginator__link" data-scroll-to="4"></a>
 			</li>
 			<li class="paginator__item">
-				<a href="#reviews" class="paginator__link"></a>
+				<a href="#" class="paginator__link" data-scroll-to="5"></a>
 			</li>
 			<li class="paginator__item">
-				<a href="#" class="paginator__link"></a>
+				<a href="#" class="paginator__link" data-scroll-to="6"></a>
 			</li>
 			<li class="paginator__item">
-				<a href="#" class="paginator__link"></a>
+				<a href="#" class="paginator__link" data-scroll-to="7"></a>
+			</li>
+			<li class="paginator__item">
+				<a href="#" class="paginator__link" data-scroll-to="8"></a>
 			</li>
 		</ul>
 	</div>
@@ -822,19 +825,21 @@
 	</a>
 	<nav class="overlay-menu" id="overlay">
 		<ul class="overlay-menu__list">
-			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#best">о нас</a></li>
-			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#burgers">бургеры</a></li>
-			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#team">команда</a></li>
-			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#menu">меню</a></li>
-			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#reviews">отзывы</a></li>
-			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#how-are-work">как мы работаем</a></li>
-			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#footer">контакты</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#best" data-scroll-to="1">о нас</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#burgers" data-scroll-to="2">бургеры</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#team" data-scroll-to="3">команда</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#menu" data-scroll-to="4">меню</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#reviews"data-scroll-to="5">отзывы</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#how-are-work" data-scroll-to="6">как мы работаем</a></li>
+			<li class="overlay-menu__item"><a class="overlay-menu__link" href="#footer" data-scroll-to="7">контакты</a></li>
 		</ul>
 	</nav>
 	<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.2/mobile-detect.min.js"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
 <script src="./js/module.js"></script>
 </div>
 </body>
