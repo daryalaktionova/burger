@@ -1,0 +1,17 @@
+.how-are-work {
+    background-image: url('../images/section-how-work/BG.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include tablets {
+        background-image: url('../images/section-how-work/BG_768px.png');
+    }
+    @include phones {
+        background-image: url('../images/section-how-work/bg_468.jpg');
+        height: 100vh;
+    }
+    .section__title--color-dark {
+        @include phones {
+            margin-bottom: 0.625rem;
+        }
+    }
+}
