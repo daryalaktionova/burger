@@ -19,7 +19,7 @@
 
     let addListeners = function() {
       button.addEventListener('click', _toggleMenu);
-        for (i=0;i<link.length;i++){
+        for (let i=0;i<link.length;i++){
           link[i].addEventListener('click', _toggleMenu);
         }
     }
@@ -273,28 +273,29 @@ let mobileComposition = () => {
 		let burgersCompositions = document.querySelectorAll('.burger__composition');
 		let buttonsCloseComposition = document.querySelectorAll('.dropdown__close-image');
 
-	for (i=0;i<burgersCompositions.length;i++){
+	for (let i=0;i<burgersCompositions.length;i++){
 		burgersCompositions[i].addEventListener('mouseenter', e => {
-			document.querySelector('.burger__composition').classList.add('active');
+			burgersCompositions[i].classList.add('active');
 		});
+		/*
 		if (isMobile) {
 			burgersCompositions[i].addEventListener('click', e => {
 				document.querySelector('.burger__composition').classList.add('active');
 			});
-		}
+		} */
 	}
 
-	for (i=0;i<burgersCompositions.length;i++){
+	for (let i=0;i<burgersCompositions.length;i++){
 		burgersCompositions[i].addEventListener('mouseleave', e => {
-			document.querySelector('.burger__composition').classList.remove('active');
+			burgersCompositions[i].closest('.active').classList.remove('active');
 		});
 	}
 
 
-	for (i=0;i<buttonsCloseComposition.length;i++){
+	for (let i=0;i<buttonsCloseComposition.length;i++){
 			buttonsCloseComposition[i].addEventListener('click', e => {
 				e.preventDefault();
-				document.querySelector('.burger__composition').classList.remove('active');
+				buttonsCloseComposition[i].closest('.active').classList.remove('active');
 			});
 		}
 	};
