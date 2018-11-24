@@ -36,12 +36,12 @@
 .accordeon-menu__item-content {
     height: 100%;
     background: rgba(47,50,52,.93);
-    width: rem(540px);
+    width: 0;
     overflow: hidden;
     display: inline-flex;
-    display: none;
+    overflow: hidden;
+    transition: .7s ease;
     @include tablets {
-        width: auto;
         flex: 1;
     }
 }
@@ -53,7 +53,7 @@
 }
 
 .accordeon-menu__item--is-active .accordeon-menu__item-content {
-    display: block;
+    width: rem(540px);
 }
 .accordeon-menu__item--is-active  .accordeon-menu__link {
     color: $link-menu-active;
@@ -69,6 +69,7 @@
     @include gagalin;
     font-size: rem(40px);
     color: #fff;
+    height: 92%;
     text-decoration: none;
     white-space: nowrap;
     transform: rotate(180deg);

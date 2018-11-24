@@ -1,0 +1,76 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(47, 50, 52, .92);
+}
+
+.popup {
+	position: relative;
+	background-color: $white;
+    @include ubuntu(light);
+	font-size: rem(14px);
+	border-radius: rem(5px);
+	padding: rem(18px);
+	width: rem(460px);
+	@include phones {
+		width: 95%;
+	}
+}
+
+.popup--form {
+	position: relative;
+	background-color: $white;
+    @include ubuntu(light);
+	font-size: rem(14px);
+	border-radius: rem(5px);
+	padding: rem(18px);
+	text-align: center;
+	@include phones {
+		width: 95%;
+	}
+}
+
+.popup__title {
+	@include gagalin;
+	margin-bottom: rem(20px);
+}
+
+.popup__content {
+	margin-bottom: 16px;
+}
+
+.popup__close {
+	position: absolute;
+	text-decoration: none;
+	top: rem(20px);
+	right: rem(20px);
+	width: 1.5625rem;
+	height: 1.5625rem;
+
+}
+.popup__close-button {
+	text-decoration: none;
+	border-radius: 5px;
+	background-color: $red;
+	color: white;
+	@include ubuntu(medium);
+	text-transform: uppercase;
+	font-size: 13px;
+	padding-top: rem(10px);
+	padding-bottom: rem(10px);
+	padding-left: rem(12px);
+	padding-right: rem(12px);
+
+}
+
+.popup__close-image {
+	width: 100%;
+	height: 100%;
+	opacity: .7;
+}
